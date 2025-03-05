@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baral Photo Studio - Professional Photography & Videography</title>
+    
+    <!-- Google Fonts - Using Roboto as requested -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- CDN Libraries -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-title" content="Baral Photo" />
+<link rel="manifest" href="/site.webmanifest" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/extra.css">
+    
+    <!-- Configure Tailwind with new color scheme -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6B9AC4',      // Peaceful blue
+                        'primary-light': '#97C4D8', // Light blue
+                        'primary-dark': '#4A7897', // Dark blue
+                        secondary: '#D8B4A0',    // Soft terracotta
+                        'secondary-dark': '#C89F8C', // Darker terracotta
+                        accent: '#8FC1A9',       // Calming green
+                        light: '#F5F5F5',        // Light gray
+                        dark: '#3D3D3D',         // Softer dark
+                        blue: {
+                            100: '#E6F0F7',
+                            200: '#C4DCF0',
+                            300: '#97C4D8',
+                            400: '#6B9AC4',
+                            500: '#4A7897',
+                            600: '#3D6A87',
+                            700: '#2C5775',
+                            800: '#1E4258',
+                            900: '#0F2937'
+                        }
+                    },
+                    fontFamily: {
+                        'sans': ['Roboto', 'sans-serif'],
+                        'display': ['Roboto', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans">
+    <!-- Preloader -->
+    <div class="loading">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Header Section -->
+    <header class="fixed w-full z-50 transition-all duration-300">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="logo">
+                <!--not implemented because provided logo is unprofessional and bad looking  
+                 <img src="assets/images/logo/logo.png" alt="Baral Photo Studios Logo" class="h-10"> -->
+                <h1 class="text-2xl font-display font-bold">Baral Photo Studio</h1>
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#portfolio" class="nav-link">Portfolio</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            
+            <!-- Mobile Navigation Button -->
+            <div class="md:hidden">
+                <button data-collapse-toggle="mobile-menu" type="button" class="text-primary focus:outline-none">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+        
+        <!-- Mobile Navigation Menu -->
+        <div class="hidden md:hidden bg-white" id="mobile-menu">
+            <div class="px-2 pt-2 pb-4 space-y-1 sm:px-3">
+                <a href="#home" class="mobile-nav-link">Home</a>
+                <a href="#about" class="mobile-nav-link">About</a>
+                <a href="#services" class="mobile-nav-link">Services</a>
+                <a href="#portfolio" class="mobile-nav-link">Portfolio</a>
+                <a href="#contact" class="mobile-nav-link">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section min-h-screen flex items-center">
+        <div class="container mx-auto px-6 py-12">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0" data-aos="fade-right">
+                    <h1 class="text-4xl md:text-5xl font-display font-bold mb-4 title-text">Beesu Captures the Special Moments that Last Forever in Your Life</h1>
+                    <p class="text-lg mb-8"><b>Professional photography and videography services in Nawalpur</b></p>
+                    <a href="#contact" class="btn-primary btn-hover-effect">Book a Session</a>
+                </div>
+                <div class="md:w-1/2" data-aos="fade-left">
+                    <div class="rounded-lg overflow-hidden shadow-xl premium-frame">
+                        <div class="image-hover h-64 md:h-96 w-full">
+                            <img src="assets/images/hero/hero-main.jpg" alt="Professional Photography Services - Capturing Weddings and Special Moments" class="w-full h-full object-cover">
+                            <div class="image-overlay">
+                                <div class="text-white text-center p-4">
+                                    <span class="text-xl font-display">Expertise in Capturing Beautiful Moments</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 about-section">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="section-title font-display">About Baral Photo Studios</h2>
+                <div class="section-divider"></div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0" data-aos="fade-right">
+                    <div class="rounded-lg overflow-hidden shadow-xl premium-frame">
+                        <div class="image-hover h-64 md:h-80 w-full">
+                            <img src="assets/images/photographer/owner.jpg" alt="Professional Photographer at Baral Photo Studios" class="w-full h-full object-cover">
+                            <div class="image-overlay">
+                                <div class="text-white text-center p-4">
+                                    <span class="text-xl font-display">Professional Photographer Bishal Baral</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2 md:pl-12" data-aos="fade-left">
+                    <h3 class="text-2xl font-display font-semibold mb-4 text-gradient">A Complete Professional Photo Studio</h3>
+                    <p class="mb-6">Located in Kawasoti-3, Savapati Chowk, Nawalpur, Baral Photo Studios offers comprehensive photography and videography services for all your special moments.</p>
+                    <p class="mb-6">With years of experience capturing life's most precious memories, we specialize in wedding photography, ceremonies like Bratabandha, and a wide range of other photography and videography services.</p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="https://www.facebook.com/baralphoto" target="_blank" class="social-link social-icon-hover">
+                            <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg>
+                        </a>
+                        <a href="https://www.youtube.com/@BeeGraphy" target="_blank" class="social-link social-icon-hover">
+                            <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.746 22 12 22 12s0 3.255-.418 4.814a2.504 2.504 0 0 1-1.768 1.768c-1.56.419-7.814.419-7.814.419s-6.255 0-7.814-.419a2.505 2.505 0 0 1-1.768-1.768C2 15.255 2 12 2 12s0-3.255.417-4.814a2.507 2.507 0 0 1 1.768-1.768C5.744 5 11.998 5 11.998 5s6.255 0 7.814.418ZM15.194 12 10 15V9l5.194 3Z" clip-rule="evenodd" /></svg>
+                        </a>
+                        <a href="https://maps.app.goo.gl/Gi93vWLk2wzx2wyQA" target="_blank" class="social-link social-icon-hover">
+                            <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 services-section">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="section-title font-display">Our Services</h2>
+                <div class="section-divider"></div>
+                <p class="mt-4 max-w-2xl mx-auto">We offer a wide range of photography and videography services to meet all your needs.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Photography Services -->
+                <div class="service-card card-hover" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-icon">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-display font-semibold mb-3">Photography</h3>
+                    <ul class="space-y-2">
+                        <li class="service-item">Portrait Photography</li>
+                        <li class="service-item">Photojournalism</li>
+                        <li class="service-item">Fashion Photography</li>
+                        <li class="service-item">Sports Photography</li>
+                        <li class="service-item">Landscape Photography</li>
+                        <li class="service-item">Product Photography</li>
+                        <li class="service-item">Architectural Photography</li>
+                    </ul>
+                </div>
+                
+                <!-- Videography Services -->
+                <div class="service-card card-hover" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-icon">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-display font-semibold mb-3">Videography</h3>
+                    <ul class="space-y-2">
+                        <li class="service-item">Brand Documentary</li>
+                        <li class="service-item">Event Videography</li>
+                        <li class="service-item">Product Videos</li>
+                        <li class="service-item">Documentary Films</li>
+                        <li class="service-item">Wedding Videography</li>
+                        <li class="service-item">Drone Videography</li>
+                    </ul>
+                </div>
+                
+                <!-- Video Editing Services -->
+                <div class="service-card card-hover" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-icon">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-display font-semibold mb-3">Video Editing</h3>
+                    <p class="mb-4">Professional video editor with 2+ years of experience with advanced video editing skills and knowledge of the latest video editing software, tools and techniques.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 portfolio-section">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="section-title font-display">Our Work</h2>
+                <div class="section-divider"></div>
+                <p class="mt-4 max-w-2xl mx-auto">Browse through our collection of photography and videography projects.</p>
+            </div>
+            
+            <div class="flex flex-col md:flex-row">
+                <!-- Categories (Left Sidebar) -->
+                <div class="md:w-1/4 mb-8 md:mb-0">
+                    <h3 class="text-xl font-display font-semibold mb-4">Categories</h3>
+                    <ul class="category-list" id="category-list">
+                        <li class="category-item active" data-category="wedding">Wedding Photography</li>
+                        <li class="category-item" data-category="videography">Videography</li>
+                        <li class="category-item" data-category="rice-feeding">Rice Feeding Ceremony</li>
+                        <li class="category-item" data-category="bratabandha">Bratabandha Ceremony</li>
+                        <li class="category-item" data-category="maternity">Maternity Photography</li>
+                        <li class="category-item" data-category="documentary">Documentary Production</li>
+                        <li class="category-item" data-category="print">Photo Print Service</li>
+                    </ul>
+                </div>
+                
+                <!-- Main Portfolio Display (Right Side) -->
+                <div class="md:w-3/4">
+                    <!-- Carousel -->
+                    <div id="portfolio-carousel" class="carousel relative">
+                        <div class="carousel-wrapper overflow-hidden">
+                            <div id="wedding" class="carousel-category active">
+                                <!-- Wedding Photos Carousel (7 images) -->
+                                <div class="carousel-container flex transition-transform duration-500">
+                                    <!-- Wedding images -->
+                                    <div class="carousel-item">
+                                        <div class="gallery-image">
+                                            <img src="assets/images/portfolio/wedding/wedding1.jpg" alt="Wedding Collection 1 - Bride and Groom" class="w-full h-full object-cover rounded-lg">
+                                            <div class="gallery-caption">
+                                                <h4 class="font-display">Wedding Collection 1</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <div class="gallery-image">
+                                            <img src="assets/images/portfolio/wedding/wedding2.jpg" alt="Wedding Collection 2 - Ceremony" class="w-full h-full object-cover rounded-lg">
+                                            <div class="gallery-caption">
+                                                <h4 class="font-display">Wedding Collection 2</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <div class="gallery-image">
+                                            <img src="assets/images/portfolio/wedding/wedding3.jpg" alt="Wedding Collection 3 - Reception" class="w-full h-full object-cover rounded-lg">
+                                            <div class="gallery-caption">
+                                                <h4 class="font-display">Wedding Collection 3</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <div class="gallery-image">
+                                            <img src="assets/images/portfolio/wedding/wedding4.jpg" alt="Wedding Collection 4 - Family Portrait" class="w-full h-full object-cover rounded-lg">
+                                            <div class="gallery-caption">
+                                                <h4 class="font-display">Wedding Collection 4</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <div class="gallery-image">
+                                            <img src="assets/images/portfolio/wedding/wedding5.jpg" alt="Wedding Collection 5 - Couple Photos" class="w-full h-full object-cover rounded-lg">
+                                            <div class="gallery-caption">
+                                                <h4 class="font-display">Wedding Collection 5</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <div class="gallery-image">
+                                            <img src="assets/images/portfolio/wedding/wedding6.jpg" alt="Wedding Collection 6 - Cultural Ceremony" class="w-full h-full object-cover rounded-lg">
+                                            <div class="gallery-caption">
+                                                <h4 class="font-display">Wedding Collection 6</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <div class="gallery-image">
+                                            <img src="assets/images/portfolio/wedding/wedding7.jpg" alt="Wedding Collection 7 - Wedding Jewelry and Details" class="w-full h-full object-cover rounded-lg">
+                                            <div class="gallery-caption">
+                                                <h4 class="font-display">Wedding Collection 7</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Other category placeholders with respective image paths -->
+                            <div id="videography" class="carousel-category hidden">
+                                <!-- Videography content with placeholder for 5 videos -->
+                                <div class="carousel-container flex transition-transform duration-500">
+                                    <div class="carousel-item">
+                                        <div class="gallery-image">
+                                            <img src="assets/images/portfolio/videography/video1.jpg" alt="Videography Service - Professional Video Production" class="w-full h-full object-cover rounded-lg">
+                                            <div class="gallery-caption">
+                                                <h4 class="font-display">Event Video Coverage</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Add more items here when images are available -->
+                                </div>
+                            </div>
+                            <div id="rice-feeding" class="carousel-category hidden">
+                                <!-- Rice Feeding content with placeholder for 5 images -->
+                                <div class="carousel-container flex transition-transform duration-500">
+                                    <div class="carousel-item">
+                                        <div class="gallery-image">
+                                            <img src="assets/images/portfolio/rice-feeding/rice1.jpg" alt="Rice Feeding Ceremony - Traditional Celebration" class="w-full h-full object-cover rounded-lg">
+                                            <div class="gallery-caption">
+                                                <h4 class="font-display">Rice Feeding Celebration</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Add more items here when images are available -->
+                                </div>
+                            </div>
+                            <div id="bratabandha" class="carousel-category hidden">
+                                <!-- Bratabandha content with placeholder for 5 images -->
+                                <div class="carousel-container flex transition-transform duration-500">
+                                    <div class="carousel-item">
+                                        <div class="gallery-image">
+                                            <img src="assets/images/portfolio/bratabandha/brata1.jpg" alt="Bratabandha Ceremony - Cultural Tradition" class="w-full h-full object-cover rounded-lg">
+                                            <div class="gallery-caption">
+                                                <h4 class="font-display">Bratabandha Ceremony</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Add more items here when images are available -->
+                                </div>
+                            </div>
+                            <div id="maternity" class="carousel-category hidden">
+                                <!-- Maternity content with placeholder for 5 images -->
+                                <div class="carousel-container flex transition-transform duration-500">
+                                    <div class="carousel-item">
+                                        <div class="gallery-image">
+                                            <img src="assets/images/portfolio/maternity/maternity1.jpg" alt="Maternity Photography - Expecting Mother" class="w-full h-full object-cover rounded-lg">
+                                            <div class="gallery-caption">
+                                                <h4 class="font-display">Maternity Session</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Add more items here when images are available -->
+                                </div>
+                            </div>
+                            <div id="documentary" class="carousel-category hidden">
+                                <!-- Documentary content with placeholder for 5 images -->
+                                <div class="carousel-container flex transition-transform duration-500">
+                                    <div class="carousel-item">
+                                        <div class="gallery-image">
+                                            <img src="assets/images/portfolio/documentary/doc1.jpg" alt="Documentary Production - Storytelling" class="w-full h-full object-cover rounded-lg">
+                                            <div class="gallery-caption">
+                                                <h4 class="font-display">Documentary Filmmaking</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Add more items here when images are available -->
+                                </div>
+                            </div>
+                            <div id="print" class="carousel-category hidden">
+                                <!-- Print service content with placeholder for 5 images -->
+                                <div class="carousel-container flex transition-transform duration-500">
+                                    <div class="carousel-item">
+                                        <div class="gallery-image">
+                                            <img src="assets/images/portfolio/print/print1.jpg" alt="Photo Print Service - High Quality Prints" class="w-full h-full object-cover rounded-lg">
+                                            <div class="gallery-caption">
+                                                <h4 class="font-display">Professional Printing</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Add more items here when images are available -->
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Carousel Controls -->
+                        <div class="carousel-controls flex justify-center mt-6">
+                            <div class="carousel-dots"><!-- Dots will be added dynamically --></div>
+                        </div>
+                        
+                        <!-- Featured Video -->
+                        <div class="mt-12">
+                            <h3 class="text-xl font-display font-semibold mb-4">Featured Work</h3>
+                            <div class="aspect-ratio-16-9 premium-frame">
+                                <iframe src="https://www.youtube.com/embed/bc-xSljZdSk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="rounded-lg shadow-lg w-full h-96"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 contact-section">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="section-title font-display">Contact Us</h2>
+                <div class="section-divider"></div>
+                <p class="mt-4 max-w-2xl mx-auto">Get in touch with us to book a session or learn more about our services.</p>
+            </div>
+            
+            <div class="flex flex-col md:flex-row">
+                <!-- Contact Information -->
+                <div class="md:w-1/2 mb-10 md:mb-0" data-aos="fade-right">
+                    <h3 class="text-2xl font-display font-semibold mb-6 text-gradient">Reach Out To Us</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start contact-info-item">
+                            <div class="contact-icon">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-medium font-display">Address</h4>
+                                <p>Kawasoti-3, Savapati Chowk, Nawalpur</p>
+                                <a href="https://maps.app.goo.gl/Gi93vWLk2wzx2wyQA" target="_blank" class="text-primary hover:underline mt-1 inline-block">View on Google Maps</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start contact-info-item">
+                            <div class="contact-icon">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-medium font-display">Phone</h4>
+                                <p>+977 9821920690</p>
+                                <p>+977 9846961105</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start contact-info-item">
+                            <div class="contact-icon">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-medium font-display">Email</h4>
+                                <p>baralphoto@gmail.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start contact-info-item">
+                            <div class="contact-icon">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-medium font-display">Business Hours</h4>
+                                <p>Monday - Saturday: 9:00 AM - 6:00 PM</p>
+                                <p>Sunday: By Appointment</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div class="md:w-1/2" data-aos="fade-left">
+                    <div class="premium-card rounded-lg shadow-lg p-6 md:p-8">
+                        <h3 class="text-2xl font-display font-semibold mb-6 text-gradient">Book a Session</h3>
+                        
+                        <form id="booking-form" class="space-y-6" action="https://formspree.io/f/xyzkrrla" method="POST">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="form-input-animation">
+                                    <input type="text" id="name" name="name" class="form-input" placeholder=" " required>
+                                    <label for="name" class="form-floating-label">First Name</label>
+                                </div>
+                                <div class="form-input-animation">
+                                    <input type="text" id="surname" name="surname" class="form-input" placeholder=" " required>
+                                    <label for="surname" class="form-floating-label">Last Name</label>
+                                </div>
+                            </div>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="form-input-animation">
+                                    <input type="email" id="email" name="email" class="form-input" placeholder=" " required>
+                                    <label for="email" class="form-floating-label">Email</label>
+                                </div>
+                                <div class="form-input-animation">
+                                    <input type="tel" id="phone" name="phone" class="form-input" placeholder=" " required>
+                                    <label for="phone" class="form-floating-label">Phone</label>
+                                </div>
+                            </div>
+                            
+                            <div class="form-input-animation">
+                                <input type="date" id="date" name="date" class="form-input date-input" required>
+                                <label for="date" class="form-floating-label date-label">Preferred Date</label>
+                            </div>
+                            
+                            <div class="custom-select-wrapper">
+                                <label for="service" class="form-label">Service Type</label>
+                                <select id="service" name="service" class="form-select custom-select" required>
+                                    <option value="" selected disabled>Select a service</option>
+                                    <option value="wedding">Wedding Photography</option>
+                                    <option value="portrait">Portrait Photography</option>
+                                    <option value="event">Event Photography</option>
+                                    <option value="bratabandha">Bratabandha Ceremony</option>
+                                    <option value="rice-feeding">Rice Feeding Ceremony</option>
+                                    <option value="video">Videography</option>
+                                    <option value="editing">Video Editing</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-input-animation textarea-animation">
+                                <textarea id="message" name="message" rows="4" class="form-textarea" placeholder=" "></textarea>
+                                <label for="message" class="form-floating-label">Message (Optional)</label>
+                            </div>
+                            
+                            <button type="submit" class="btn-primary btn-hover-effect w-full">Submit Booking Request</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="py-10">
+        <div class="container mx-auto px-6">
+            <h3 class="text-2xl font-display font-semibold mb-6 text-center text-gradient">Find Us</h3>
+            <div class="rounded-lg overflow-hidden shadow-lg premium-frame">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3534.0425767332196!2d84.12662607457395!3d27.64064823146062!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3994fb37e078a3a9%3A0x973f22fe6ef1a022!2sBaral%20Photo%20Studio!5e0!3m2!1sen!2snp!4v1709558420884!5m2!1sen!2snp" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-section py-10">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between">
+                <div class="mb-8 md:mb-0">
+                    <h3 class="text-2xl font-display font-bold mb-4 footer-logo">Baral Photo Studios</h3>
+                    <p class="max-w-md">Professional photography and videography services capturing your special moments in Kawasoti.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div>
+                        <h4 class="text-lg font-display font-semibold mb-4">Quick Links</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#home" class="footer-link">Home</a></li>
+                            <li><a href="#about" class="footer-link">About</a></li>
+                            <li><a href="#services" class="footer-link">Services</a></li>
+                            <li><a href="#portfolio" class="footer-link">Portfolio</a></li>
+                            <li><a href="#contact" class="footer-link">Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-display font-semibold mb-4">Services</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#portfolio" class="footer-link">Wedding Photography</a></li>
+                            <li><a href="#portfolio" class="footer-link">Portrait Photography</a></li>
+                            <li><a href="#portfolio" class="footer-link">Event Photography</a></li>
+                            <li><a href="#portfolio" class="footer-link">Videography</a></li>
+                            <li><a href="#portfolio" class="footer-link">Video Editing</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-display font-semibold mb-4">Social Media</h4>
+                        <div class="flex space-x-4">
+                            <a href="https://www.facebook.com/baralphoto" target="_blank" class="footer-social-link social-icon-hover">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg>
+                            </a>
+                            <a href="https://www.youtube.com/@BeeGraphy" target="_blank" class="footer-social-link social-icon-hover">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.746 22 12 22 12s0 3.255-.418 4.814a2.504 2.504 0 0 1-1.768 1.768c-1.56.419-7.814.419-7.814.419s-6.255 0-7.814-.419a2.505 2.505 0 0 1-1.768-1.768C2 15.255 2 12 2 12s0-3.255.417-4.814a2.507 2.507 0 0 1 1.768-1.768C5.744 5 11.998 5 11.998 5s6.255 0 7.814.418ZM15.194 12 10 15V9l5.194 3Z" clip-rule="evenodd" /></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-opacity-20 mt-10 pt-6 text-center text-sm">
+                <p>&copy; 2025 Baral Photo Studios | All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

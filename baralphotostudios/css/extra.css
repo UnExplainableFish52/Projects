@@ -1,0 +1,292 @@
+/* ===== ANIMATIONS ===== */
+
+/* Fade In Animation */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Slide Up Animation */
+@keyframes slideUp {
+    from { transform: translateY(30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Slide In Right Animation */
+@keyframes slideInRight {
+    from { transform: translateX(50px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+/* Slide In Left Animation */
+@keyframes slideInLeft {
+    from { transform: translateX(-50px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+/* Pulse Animation for Attention */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Loading Animation */
+.loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.loading.loaded {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(107, 154, 196, 0.3);
+    border-radius: 50%;
+    border-top-color: var(--color-primary);
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Enhanced Button Hover Effects */
+.btn-hover-effect {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn-hover-effect::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.7s ease;
+    z-index: -1;
+}
+
+.btn-hover-effect:hover::before {
+    left: 100%;
+}
+
+/* Gallery Image Effects */
+.gallery-image {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    height: 300px; /* Fixed height for consistency */
+}
+
+.gallery-image img {
+    transition: all 0.5s ease;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gallery-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    color: white;
+    padding: 1rem;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.gallery-image:hover .gallery-caption {
+    transform: translateY(0);
+}
+
+/* Social Icons Hover Effects */
+.social-icon-hover {
+    transition: all 0.3s ease;
+}
+
+.social-icon-hover:hover {
+    transform: translateY(-5px) rotate(10deg);
+}
+
+/* Card Hover Effects */
+.card-hover {
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-sm);
+}
+
+.card-hover:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Carousel Navigation */
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.carousel-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #ddd;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.carousel-dot.active {
+    background-color: var(--color-primary);
+    transform: scale(1.3);
+}
+
+/* Image Hover Effects */
+.image-hover {
+    overflow: hidden;
+    position: relative;
+    border-radius: var(--radius-md);
+    background-color: var(--color-light); /* Background for placeholder */
+    height: 100%;
+    min-height: 250px; /* Minimum height for placeholders */
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(65, 90, 119, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.image-hover:hover .image-overlay {
+    opacity: 1;
+}
+
+/* Aspect Ratio Helpers */
+.aspect-ratio-16-9 {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+}
+
+.aspect-ratio-16-9 iframe,
+.aspect-ratio-16-9 video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-light);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-primary-light);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-primary);
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Improved Placeholder Styles for Images */
+.image-placeholder {
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primary);
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+    position: relative;
+    border-radius: var(--radius-md);
+}
+
+.image-placeholder::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24' stroke='%236B9AC4' stroke-width='1' fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M0 0h24v24H0z' stroke='none'/%3E%3Crect x='4' y='4' width='16' height='16' rx='2' /%3E%3Ccircle cx='8.5' cy='8.5' r='1.5' /%3E%3Cpolyline points='21 15 16 10 5 21' /%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center 40%;
+    background-size: 48px;
+    opacity: 0.3;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+    .gallery-image {
+        height: 250px;
+    }
+    
+    .image-hover {
+        min-height: 200px;
+    }
+    
+    /* Optimize animations for mobile */
+    .animate-on-load {
+        animation-duration: 0.5s;
+    }
+    
+    /* Touch-friendly hover states */
+    .image-overlay {
+        opacity: 0.5;
+        background: rgba(65, 90, 119, 0.5);
+    }
+}
+
+/* Tablet Optimizations */
+@media (min-width: 769px) and (max-width: 1023px) {
+    .gallery-image {
+        height: 280px;
+    }
+}
