@@ -1,0 +1,14 @@
+{
+    "students": [
+        {
+            "id": "12",
+            "name": "ram ",
+            "teacher_id": "teach01",
+            "friends": [
+                "shyam",
+                "hari"
+            ]
+        }
+    ],
+    "teachers": []
+}
